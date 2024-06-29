@@ -2,10 +2,11 @@ pipeline {
     agent {
         label ' Agent-1'
     }
-    // options {
-    //     timeout(time: 30, unit: 'MINUTES') 
-    //     disableConcurrentBuilds()
-    // }
+    options {
+        // timeout(time: 30, unit: 'MINUTES') 
+        timeout(time: 5, unit: 'SECONDS')
+        disableConcurrentBuilds()
+    }
     // parameters {
     //     string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
     //     text(name: 'BIOGRAPHY', defaultValue: '', description: 'Enter some information about the person')
