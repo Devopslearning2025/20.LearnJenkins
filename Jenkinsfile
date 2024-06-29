@@ -45,8 +45,8 @@ pipeline {
         //         echo "Password: ${params.PASSWORD}"
         //         echo "Trigger test again"
         //         error 'some failure'
-            }
-        }
+        //     }
+        // }
     }
         // post { 
         //     always { 
