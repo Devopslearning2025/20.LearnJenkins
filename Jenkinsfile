@@ -46,7 +46,7 @@ pipeline {
                 //echo "Password: ${params.PASSWORD}"
                 echo "Trigger test again"
                 // error 'some failure'
-                echo "fuck the world"
+                echo "fuck the world on any cost"
             }
         }
     }
