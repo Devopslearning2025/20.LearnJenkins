@@ -45,6 +45,7 @@ pipeline {
                 echo "Trigger test again"
             }
         }
+    }
         post { 
             always { 
                 echo 'I will always say Hello again!'
@@ -56,5 +57,4 @@ pipeline {
                 echo 'i will the pipeline is failure'
             }
         }
-    }
 }
