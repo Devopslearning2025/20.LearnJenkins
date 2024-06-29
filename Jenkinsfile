@@ -13,6 +13,10 @@ pipeline {
         choice(name: 'CHOICE', choices: ['One', 'Two', 'Three'], description: 'Pick something')
         password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
     }
+    environment {
+        DEPLOY_TO : "production"
+        GREETING  : "Good Monring" 
+    }
     stages {
         stage('Build') {
             steps {
@@ -28,6 +32,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo "this is Deploy"
+                sh env
             }
         }
         stage('print parameeters') {
