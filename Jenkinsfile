@@ -53,11 +53,11 @@ pipeline {
             always { 
                 echo 'I will always say Hello again!'
             }
-        // //     success {
-        // //         echo 'i will run the pipeline is usccess'
-        // //     }
-        // //     failure {
-        // //         echo 'i will the pipeline is failure'
-        // //     }
-        // }
+            success {
+                echo 'i will run the pipeline is usccess'
+            }
+            failure {
+                echo 'i will the pipeline is failure'
+            }
+        }
 }
