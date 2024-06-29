@@ -21,6 +21,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo "this is build"
+                sh 'env'
             }
         }
         stage('Test') {
@@ -32,7 +33,6 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo "this is Deploy"
-                sh env
             }
         }
         stage('print parameeters') {
