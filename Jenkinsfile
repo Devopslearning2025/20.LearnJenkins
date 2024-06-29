@@ -14,10 +14,10 @@ pipeline {
         choice(name: 'CHOICE', choices: ['Dev', 'QA', 'Prod'], description: 'Pick something')
         password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
     }
-    // // environment {
-    //     DEPLOY_TO = 'production'
-    //     GREETING  = 'Good Monring"'
-    // }
+    environment {
+        DEPLOY_TO = 'production'
+        GREETING  = 'Good Monring"'
+    }
     stages {
         stage('Build') {
             steps {
@@ -49,15 +49,15 @@ pipeline {
             }
         }
     }
-        // post { 
-        //     always { 
-        //         echo 'I will always say Hello again!'
-        //     }
+        post { 
+            always { 
+                echo 'I will always say Hello again!'
+            }
         //     success {
         //         echo 'i will run the pipeline is usccess'
         //     }
         //     failure {
         //         echo 'i will the pipeline is failure'
         //     }
-        // }
+        }
 }
