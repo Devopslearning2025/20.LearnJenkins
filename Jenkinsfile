@@ -7,7 +7,8 @@ pipeline {
         disableConcurrentBuilds()
     }
     parameters {
-        string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+        //string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+        string(name: 'HOSTNAME', defaultValue: '', description: 'Who should I say hello to?')
         text(name: 'BIOGRAPHY', defaultValue: '', description: 'Enter some information about the person')
         booleanParam(name: 'TOGGLE', defaultValue: true, description: 'Toggle this value')
         choice(name: 'CHOICE', choices: ['Dev', 'QA', 'Prod'], description: 'Pick something')
@@ -37,7 +38,8 @@ pipeline {
         }
         stage('print parameeters') {
             steps{
-                echo "Hello: ${params.PERSON}"
+                //echo "Hello: ${params.PERSON}"
+                echo "Hello: ${params.HOSTNAME}"
                 echo "Biography: ${params.BIOGRAPHY}"
                 echo "Toggle: ${params.TOGGLE}"
                 echo "Choice: ${params.CHOICE}"
