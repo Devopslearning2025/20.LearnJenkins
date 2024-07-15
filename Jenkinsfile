@@ -120,6 +120,7 @@ pipeline {
         }
         failure {
             echo 'i will run when pipeline is failure'
+            sh 'echo i am failure'
         }
     }
 }
