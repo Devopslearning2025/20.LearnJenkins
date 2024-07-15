@@ -78,6 +78,10 @@ pipeline {
         choice(name: 'CHOICE', choices: ['Dev', 'QA', 'Prod'], description: 'Pick something')
         password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
     }
+    environment {
+        DEPLOY_TO = 'production'
+        GREETING  = 'Good Monring"'
+    }
     stages {
         stage('Build') {
             steps {
@@ -88,6 +92,7 @@ pipeline {
             steps {
                 sh 'echo this is test'
                 sh 'sleep 10'
+                sh 'env'
             }
         }
         stage('Deploy') {
@@ -102,7 +107,7 @@ pipeline {
                 echo "Toggle: ${params.TOGGLE}"
                 echo "Choice: ${params.CHOICE}"
 //                echo "Password: ${params.PASSWORD}"
-                //echo "Trigger test again"
+                echo "Trigger test again"
                 //error 'some failure'
             }
         }        
