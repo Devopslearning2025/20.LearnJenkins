@@ -92,11 +92,11 @@ pipeline {
             steps {
                 sh 'echo this is test'
                 sh 'sleep 10'
-                sh 'env'
             }
         }
         stage('Deploy') {
             steps {
+                sh 'env'                
                 sh 'echo this is deploy'
             }
         }
