@@ -96,7 +96,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh 'env'                
-                sh 'echo this is deploy'
+               // sh 'echo this is deploy'
+               echo "this is deploy"
             }
         }
         stage('print parameeters') {
