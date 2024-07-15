@@ -63,7 +63,7 @@
 // }
 
 pipeline {
-    agent any
+    agent Agent-1
     stages {
         stage('Build') {
             steps {
