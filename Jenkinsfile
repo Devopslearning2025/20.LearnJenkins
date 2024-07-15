@@ -98,12 +98,12 @@ pipeline {
         stage('print parameeters') {
             steps{
                 echo "Hello: ${params.PERSON}"
-                //echo "Hello: ${params.HOSTNAME}"
+                echo "Hello: ${params.HOSTNAME}"
                 echo "Biography: ${params.BIOGRAPHY}"
                 echo "Toggle: ${params.TOGGLE}"
                 echo "Choice: ${params.CHOICE}"
-                //echo "Password: ${params.PASSWORD}"
-                echo "Trigger test again"
+                echo "Password: ${params.PASSWORD}"
+                //echo "Trigger test again"
                 //error 'some failure'
             }
         }        
