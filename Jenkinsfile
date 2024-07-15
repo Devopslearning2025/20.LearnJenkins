@@ -1,54 +1,54 @@
-pipeline {
-    agent {
-        label 'Agent-1'
-    }
-    options {
-        timeout(time: 30, unit: 'MINUTES') 
-        disableConcurrentBuilds()
-    }
-    parameters {
-        string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
-        //string(name: 'HOSTNAME', defaultValue: '', description: 'Who should I say hello to?')
-        text(name: 'BIOGRAPHY', defaultValue: '', description: 'Enter some information about the person')
-        booleanParam(name: 'TOGGLE', defaultValue: true, description: 'Toggle this value')
-        choice(name: 'CHOICE', choices: ['Dev', 'QA', 'Prod'], description: 'Pick something')
-        password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
-    }
-    environment {
-        DEPLOY_TO = 'production'
-        GREETING  = 'Good Monring"'
-    }
-    stages {
-        stage('Build') {
-            steps {
-                echo "this is build"
-                // sh 'env'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo "this is test"
-                sleep 10
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo "this is Deploy"
-            }
-        }
-        stage('print parameeters') {
-            steps{
-                echo "Hello: ${params.PERSON}"
-                //echo "Hello: ${params.HOSTNAME}"
-                echo "Biography: ${params.BIOGRAPHY}"
-                echo "Toggle: ${params.TOGGLE}"
-                echo "Choice: ${params.CHOICE}"
-                //echo "Password: ${params.PASSWORD}"
-                echo "Trigger test again"
-                //error 'some failure'
-            }
-        }
-    }
+// pipeline {
+//     agent {
+//         label 'Agent-1'
+//     }
+//     options {
+//         timeout(time: 30, unit: 'MINUTES') 
+//         disableConcurrentBuilds()
+//     }
+//     parameters {
+//         string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+//         //string(name: 'HOSTNAME', defaultValue: '', description: 'Who should I say hello to?')
+//         text(name: 'BIOGRAPHY', defaultValue: '', description: 'Enter some information about the person')
+//         booleanParam(name: 'TOGGLE', defaultValue: true, description: 'Toggle this value')
+//         choice(name: 'CHOICE', choices: ['Dev', 'QA', 'Prod'], description: 'Pick something')
+//         password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
+//     }
+//     environment {
+//         DEPLOY_TO = 'production'
+//         GREETING  = 'Good Monring"'
+//     }
+//     stages {
+//         stage('Build') {
+//             steps {
+//                 echo "this is build"
+//                 // sh 'env'
+//             }
+//         }
+//         stage('Test') {
+//             steps {
+//                 echo "this is test"
+//                 sleep 10
+//             }
+//         }
+//         stage('Deploy') {
+//             steps {
+//                 echo "this is Deploy"
+//             }
+//         }
+//         stage('print parameeters') {
+//             steps{
+//                 echo "Hello: ${params.PERSON}"
+//                 //echo "Hello: ${params.HOSTNAME}"
+//                 echo "Biography: ${params.BIOGRAPHY}"
+//                 echo "Toggle: ${params.TOGGLE}"
+//                 echo "Choice: ${params.CHOICE}"
+//                 //echo "Password: ${params.PASSWORD}"
+//                 echo "Trigger test again"
+//                 //error 'some failure'
+//             }
+//         }
+//     }
 //         post { 
 //             always { 
 //                 echo 'I will always say Hello again!'
@@ -62,54 +62,54 @@ pipeline {
 //         }
 // }
 
-// pipeline {
-//     agent {
-//         label 'Agent-1'
-//     }
-//     options {
-//         // Timeout counter starts AFTER agent is allocated
-//         timeout(time: 30, unit: 'MINUTES')
-//         disableConcurrentBuilds()
-//     }
-//     parameters {
-//         string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
-//         text(name: 'BIOGRAPHY', defaultValue: '', description: 'Enter some information about the person')
-//         booleanParam(name: 'TOGGLE', defaultValue: true, description: 'Toggle this value')
-//         choice(name: 'CHOICE', choices: ['Dev', 'QA', 'Prod'], description: 'Pick something')
-//         password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
-//     }
-//     environment {
-//         DEPLOY_TO = 'production'
-//         GREETING  = 'Good Monring"'
-//     }
-//     stages {
-//         stage('Build') {
-//             steps {
-//                 sh 'echo this is build'
-//             }
-//         }
-//         stage('Test') {
-//             steps {
-//                 sh 'echo this is test'
-//                 sh 'sleep 10'
-//             }
-//         }
-//         stage('Deploy') {
-//             steps {
-//                 sh 'env'                
-//                 sh 'echo this is deploy'
-//             }
-//         }
-//         stage('print parameeters') {
-//             steps{
-//                 echo "Helloo: ${params.PERSON}"
-//                 echo "Biography: ${params.BIOGRAPHY}"
-//                 echo "Toggle: ${params.TOGGLE}"
-//                 echo "Choice: ${params.CHOICE}"
-// //                echo "Password: ${params.PASSWORD}"
-//                 echo "Trigger test again"
-//                 //error 'some failure'
-//             }
-//         }        
-//     }
-}
+// // pipeline {
+// //     agent {
+// //         label 'Agent-1'
+// //     }
+// //     options {
+// //         // Timeout counter starts AFTER agent is allocated
+// //         timeout(time: 30, unit: 'MINUTES')
+// //         disableConcurrentBuilds()
+// //     }
+// //     parameters {
+// //         string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+// //         text(name: 'BIOGRAPHY', defaultValue: '', description: 'Enter some information about the person')
+// //         booleanParam(name: 'TOGGLE', defaultValue: true, description: 'Toggle this value')
+// //         choice(name: 'CHOICE', choices: ['Dev', 'QA', 'Prod'], description: 'Pick something')
+// //         password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
+// //     }
+// //     environment {
+// //         DEPLOY_TO = 'production'
+// //         GREETING  = 'Good Monring"'
+// //     }
+// //     stages {
+// //         stage('Build') {
+// //             steps {
+// //                 sh 'echo this is build'
+// //             }
+// //         }
+// //         stage('Test') {
+// //             steps {
+// //                 sh 'echo this is test'
+// //                 sh 'sleep 10'
+// //             }
+// //         }
+// //         stage('Deploy') {
+// //             steps {
+// //                 sh 'env'                
+// //                 sh 'echo this is deploy'
+// //             }
+// //         }
+// //         stage('print parameeters') {
+// //             steps{
+// //                 echo "Helloo: ${params.PERSON}"
+// //                 echo "Biography: ${params.BIOGRAPHY}"
+// //                 echo "Toggle: ${params.TOGGLE}"
+// //                 echo "Choice: ${params.CHOICE}"
+// // //                echo "Password: ${params.PASSWORD}"
+// //                 echo "Trigger test again"
+// //                 //error 'some failure'
+// //             }
+// //         }        
+// //     }
+// }
